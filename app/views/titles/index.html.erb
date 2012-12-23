@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+	<th></th>
     <th>Title</th>
     <th>Owner</th>
 	<th>Held For</th>
@@ -12,6 +13,7 @@
 
 <% @titles.each do |title| %>
   <tr>
+	<td><%= image_tag(title.image_url, :class => 'title-image', :size => "150x200") %></td>
     <td><%= title.title %></td>
     <td><%= title.owner %></td>
 	<td><%= title.days_since_acquired() %> Days</td>

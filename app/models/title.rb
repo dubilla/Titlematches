@@ -1,5 +1,5 @@
 class Title < ActiveRecord::Base
-  attr_accessible :owner, :title, :date_acquired
+  attr_accessible :owner, :title, :date_acquired, :image_url
 
   def days_since_acquired()
     days_since = 0
