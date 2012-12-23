@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @title.title %>
+</p>
+
+<p>
+  <b>Owner:</b>
+  <%= @title.owner %>
+</p>
+
+<p>
+  <b>Held For:</b>
+  <%= @title.days_since_acquired() %> Days
+</p>
+
+
+<%= link_to 'Edit', edit_title_path(@title) %> |
+<%= link_to 'Back', titles_path %>
