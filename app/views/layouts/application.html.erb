@@ -11,9 +11,10 @@
 	  <div class="navbar-inner">
 	    <a class="brand" href="/">Title Match Central</a>
 	    <ul class="nav">
-	      <li class="active"><a href="/titles">Titles</a></li>
-	      <li><a href="/titlematches">Title Matches</a></li>
-	      <li><a href="/users">Competitors</a></li>
+		  <%= nav_link "Titles", titles_path %>
+		  <%= nav_link "Title Matches", titlematches_path %>
+		  <%= #nav_link "Titles", users_path
+		  %>
 	    </ul>
 	  </div>
 	</div>
