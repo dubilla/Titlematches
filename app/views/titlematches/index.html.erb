@@ -1,0 +1,27 @@
+<h2>Title Matches</h2>
+
+<table>
+  <tr>
+    <th>Date won</th>
+    <th>Title</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @titlematches.each do |titlematch| %>
+  <tr>
+    <td><%= titlematch.date_won %></td>
+    <td><%= titlematch.title_id %></td>
+    <td><%= titlematch.user %></td>
+    <td><%= link_to 'Show', titlematch %></td>
+    <td><%= link_to 'Edit', edit_titlematch_path(titlematch) %></td>
+    <td><%= link_to 'Destroy', titlematch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Titlematch', new_titlematch_path %>
