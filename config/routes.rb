@@ -1,4 +1,6 @@
 Titlematches::Application.routes.draw do
+  resources :titlematches
+
   resources :titles
 
   # The priority is based upon order of creation:

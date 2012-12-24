@@ -1,0 +1,29 @@
+<%= form_for(@titlematch) do |f| %>
+  <% if @titlematch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@titlematch.errors.count, "error") %> prohibited this titlematch from being saved:</h2>
+
+      <ul>
+      <% @titlematch.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title_id %><br />
+    <%= f.select :title_id, Title.all.collect { |t| [t.title, t.id] }, {} %>
+  </div>
+  <div class="field">
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+  </div>
+  <div class="field">
+    <%= f.label :date_won %><br />
+    <%= f.date_select :date_won %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

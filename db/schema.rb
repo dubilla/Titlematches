@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121223160942) do
+ActiveRecord::Schema.define(:version => 20121223170810) do
+
+  create_table "titlematches", :force => true do |t|
+    t.integer  "title_id"
+    t.string   "user"
+    t.date     "date_won"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "titles", :force => true do |t|
     t.string   "title"

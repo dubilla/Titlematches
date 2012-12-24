@@ -13,7 +13,7 @@
 <% @titlematches.each do |titlematch| %>
   <tr>
     <td><%= titlematch.date_won %></td>
-    <td><%= titlematch.title_id %></td>
+    <td><%= titlematch.title.title %></td>
     <td><%= titlematch.user %></td>
     <td><%= link_to 'Show', titlematch %></td>
     <td><%= link_to 'Edit', edit_titlematch_path(titlematch) %></td>
