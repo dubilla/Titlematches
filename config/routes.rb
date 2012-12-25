@@ -1,4 +1,13 @@
 Titlematches::Application.routes.draw do
+
+  controller :sessions do
+    get 'login' => :new
+    post 'logout' => :create
+    get 'logout' => :destroy
+  end
+
+  resources :users
+
   resources :titlematches
 
   resources :titles

@@ -13,11 +13,12 @@
 
   <div class="field">
     <%= f.label :title_id %><br />
-    <%= f.select :title_id, Title.all.collect { |t| [t.title, t.id] }, {} %>
+    <%= f.select :title_id, Title.all.collect { |t| [t.title, t.id] }, { :prompt => "Which title was up?" } %>
   </div>
   <div class="field">
-    <%= f.label :user %><br />
-    <%= f.text_field :user %>
+    <%= f.label :user_id %><br />
+<% #blog this difference for prompt/... - http://apidock.com/rails/ActionView/Helpers/FormOptionsHelper/select - search:rxcfc%>
+    <%= f.select :user_id, User.all.collect { |u| [u.display_name, u.id] }, { :prompt => "Who won?"} %>
   </div>
   <div class="field">
     <%= f.label :date_won %><br />

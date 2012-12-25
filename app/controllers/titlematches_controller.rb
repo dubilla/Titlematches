@@ -25,7 +25,6 @@ class TitlematchesController < ApplicationController
   # GET /titlematches/new.json
   def new
     @titlematch = Titlematch.new
-    @titles = Title.find(:all)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,7 +35,6 @@ class TitlematchesController < ApplicationController
   # GET /titlematches/1/edit
   def edit
     @titlematch = Titlematch.find(params[:id])
-    @titles = Title.find(:all)
   end
 
   # POST /titlematches

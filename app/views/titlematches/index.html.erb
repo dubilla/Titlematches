@@ -14,7 +14,7 @@
   <tr>
     <td><%= titlematch.date_won %></td>
     <td><%= titlematch.title.title %></td>
-    <td><%= titlematch.user %></td>
+    <td><%= titlematch.user.display_name %></td>
     <td><%= link_to 'Show', titlematch %></td>
     <td><%= link_to 'Edit', edit_titlematch_path(titlematch) %></td>
     <td><%= link_to 'Destroy', titlematch, method: :delete, data: { confirm: 'Are you sure?' } %></td>

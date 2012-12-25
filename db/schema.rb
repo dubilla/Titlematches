@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121223170810) do
+ActiveRecord::Schema.define(:version => 20121224212738) do
 
   create_table "titlematches", :force => true do |t|
     t.integer  "title_id"
-    t.string   "user"
     t.date     "date_won"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "user_id"
   end
 
   create_table "titles", :force => true do |t|
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(:version => 20121223170810) do
     t.date     "date"
     t.date     "date_acquired"
     t.string   "image_url"
+    t.integer  "user_id"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "password_digest"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "display_name"
   end
 
 end

@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title_id: 1
-  user: MyString
+  title: one
+  user: one
   date_won: 2012-12-23
 
 two:
-  title_id: 1
-  user: MyString
+  title: two
+  user: two
   date_won: 2012-12-23
