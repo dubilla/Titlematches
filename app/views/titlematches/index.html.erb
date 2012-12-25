@@ -16,12 +16,16 @@
     <td><%= titlematch.title.title %></td>
     <td><%= titlematch.user.display_name %></td>
     <td><%= link_to 'Show', titlematch %></td>
-    <td><%= link_to 'Edit', edit_titlematch_path(titlematch) %></td>
-    <td><%= link_to 'Destroy', titlematch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% if session[:user_id] %>
+    	<td><%= link_to 'Edit', edit_titlematch_path(titlematch) %></td>
+    	<td><%= link_to 'Destroy', titlematch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Titlematch', new_titlematch_path %>
+<% if session[:user_id] %>
+	<%= link_to 'New Titlematch', new_titlematch_path %>
+<% end %>

@@ -1,19 +1,20 @@
 <% if flash[:alert] %>
-	<% if flash[:alert] %>
-		<p id="notice"><%= flash[:alert] %></p>
-	<% end %>
-	<%= form_tag do %>
-		<fieldset>
-			<legend>Please Log In</legend>
+	<p id="notice"><%= flash[:alert] %></p>
+<% end %>
+<%= form_tag do %>
+	<fieldset>
+		<legend>Please Log In</legend>
 
-			<div>
-				<%= label_tag :name, 'Username:' %>
-				<%= text_field_tag :name, params[:name] %>
-			</div>
-			<div>
-				<%= label_tag :password, 'Password:' %>
-				<%= password_field_tag :password, params[:password] %>
-			</div>
-		</fieldset>
-	<% end %>
+		<div>
+			<%= label_tag :name, 'Username:' %>
+			<%= text_field_tag :name, params[:name] %>
+		</div>
+		<div>
+			<%= label_tag :password, 'Password:' %>
+			<%= password_field_tag :password, params[:password] %>
+		</div>
+	</fieldset>
+	<div>
+		<%= submit_tag "Login" %>
+	</div>
 <% end %>

@@ -1,4 +1,6 @@
 class TitlematchesController < ApplicationController
+  skip_before_filter :authorize, :only => [:index, :show]
+
   # GET /titlematches
   # GET /titlematches.json
   def index

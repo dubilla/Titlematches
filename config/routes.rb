@@ -2,7 +2,7 @@ Titlematches::Application.routes.draw do
 
   controller :sessions do
     get 'login' => :new
-    post 'logout' => :create
+    post 'login' => :create
     get 'logout' => :destroy
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121224212738) do
+ActiveRecord::Schema.define(:version => 20121225180012) do
 
   create_table "titlematches", :force => true do |t|
     t.integer  "title_id"
@@ -23,13 +23,10 @@ ActiveRecord::Schema.define(:version => 20121224212738) do
 
   create_table "titles", :force => true do |t|
     t.string   "title"
-    t.string   "owner"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-    t.date     "date"
     t.date     "date_acquired"
     t.string   "image_url"
-    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|

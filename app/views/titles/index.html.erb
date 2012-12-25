@@ -14,16 +14,19 @@
 <% @titles.each do |title| %>
   <tr>
 	<td><%= image_tag(title.image_url, :class => 'title-image', :size => "150x200") %></td>
-    <td><%= title.title %></td>
-    <td><%= title.owner %></td>
+    <td><%= link_to title.title, title %></td>
+    <td><%= title.get_owner() %></td>
 	<td><%= title.days_since_acquired() %> Days</td>
-    <td><%= link_to 'Show', title %></td>
-    <td><%= link_to 'Edit', edit_title_path(title) %></td>
-    <td><%= link_to 'Destroy', title, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% if session[:user_id] %>
+    	<td><%= link_to 'Edit', edit_title_path(title) %></td>
+    	<td><%= link_to 'Destroy', title, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Title', new_title_path %>
+<% if session[:user_id] %>
+	<%= link_to 'New Title', new_title_path %>
+<% end %>
