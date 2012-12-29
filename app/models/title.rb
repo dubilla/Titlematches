@@ -6,12 +6,15 @@ class Title < ActiveRecord::Base
   # should probably make an ApplicationHelper to get days_since
   # and a separate one to get the actual date of the last titlematch for the given title [DBU]
   def days_since_acquired()
+    days_since = ""
     # Would be nice to make this more DRY - a private method? [DBU 12/25/12]
     titlematch = Titlematch.order(:date_won).find_by_title_id(id)
-    date_acquired = titlematch.date_won
+    if titlematch
+      date_acquired = titlematch.date_won
+    end
 
     days_since = 0
-    if (date_acquired)
+    if date_acquired
       days_since = (Date.today - date_acquired).to_i
     end
 
@@ -19,8 +22,12 @@ class Title < ActiveRecord::Base
   end
 
   def get_owner()
+    owner = ""
     titlematch = Titlematch.order(:date_won).find_by_title_id(id)
-    return titlematch.user.display_name
+    if titlematch and titlematch.user
+      owner = titlematch.user.display_name
+    end
+    return owner
   end
 
 end
