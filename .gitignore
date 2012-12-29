@@ -15,4 +15,4 @@
 /tmp
 
 # Ignore SassCache?
-./sass-cache
+/.sass-cache
