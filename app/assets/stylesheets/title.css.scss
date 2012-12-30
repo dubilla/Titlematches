@@ -1,3 +1,40 @@
 // Place all the styles related to the Title controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.title {
+	overflow: hidden;
+	margin-bottom: 2em;
+	padding-bottom: 2em;
+	border-bottom: 1px solid #cecece;
+
+	.title-image,
+	.title-details {
+		float: left;
+	}
+	.title-details {
+		margin-left: 2em;
+	}
+	.title-admin-tools {
+		float: left;
+		padding-left: 2em;
+
+		.title-admin-tool {
+			line-height: 4;
+		}
+	}
+
+	&.single {
+		border-bottom: none;
+
+		.title-details {
+			margin-right: 5em;
+		}
+
+		.title-admin-tools {
+			clear: both;
+			margin-top: 4em;
+		}
+
+	}
+}

@@ -1,6 +1,8 @@
-<h1>Editing title</h1>
+<h1>Editing Title</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @title %> |
-<%= link_to 'Back', titles_path %>
+<div class="title-admin-tools">
+	<%= link_to 'Show', @title, :class => 'btn' %>
+	<%= link_to 'Back', titles_path, :class => 'btn' %>
+</div>
