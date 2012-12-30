@@ -12,7 +12,9 @@
 	  <%= image_tag(@title.image_url, :class => 'title-image img-polaroid', :size => "150x200") %>
 
 	<div class="title-admin-tools">
-		<%= link_to 'Edit', edit_title_path(@title), :class => 'btn' %>
+		<% if session[:user_id] %>
+			<%= link_to 'Edit', edit_title_path(@title), :class => 'btn' %>
+		<% end %>
 		<%= link_to 'Back', titles_path, :class => 'btn' %>
 	</div>
 

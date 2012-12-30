@@ -15,6 +15,7 @@
   <%= @titlematch.date_won %>
 </p>
 
-
-<%= link_to 'Edit', edit_titlematch_path(@titlematch) %> |
+<% if session[:user_id] %>
+	<%= link_to 'Edit', edit_titlematch_path(@titlematch) %> |
+<% end %>
 <%= link_to 'Back', titlematches_path %>
